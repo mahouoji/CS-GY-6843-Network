@@ -157,4 +157,4 @@ def get_route(hostname):
             finally:
                 mySocket.close()
 
-print(get_route("bing.com"))
+#print(get_route("bing.com"))
