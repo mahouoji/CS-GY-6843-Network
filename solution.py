@@ -156,5 +156,3 @@ def get_route(hostname):
                 break
             finally:
                 mySocket.close()
-
-#print(get_route("bing.com"))
