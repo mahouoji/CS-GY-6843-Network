@@ -138,14 +138,14 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
-                    tracelist2.append([str(ttl), format_time(t, timeReceived), addr[0], hopHostname])
+                    tracelist2.append([str(ttl), format_time(t, timeReceived), addr[0],  hopHostname])
                     #Fill in end
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here and return your list if your destination IP is met
-                    tracelist2.append([str(ttl), format_time(timeSent, timeReceived), addr[0], hostname])
+                    tracelist2.append([str(ttl), format_time(timeSent, timeReceived), addr[0], hopHostname])
                     return tracelist2
                     #Fill in end
                 else:
@@ -156,3 +156,5 @@ def get_route(hostname):
                 break
             finally:
                 mySocket.close()
+
+#print(get_route("stackoverflow.com"))
